@@ -15,8 +15,12 @@ class Body:
         'authorized': False,
     }
 
+    CAN_NOT_BE_DELETED = {
+        'error': 'Object cannot be deleted'
+    }
+
     FORBIDDEN = {
-        'text': 'Отказано в доступе'
+        'error': 'Отказано в доступе'
     }
 
     AUTHORIZED_TRUE = {
@@ -27,16 +31,13 @@ class Body:
         'created': True
     }
 
-    NOT_ENOUGH_MONEY = {
-        'text': 'Недостаточно средств'
-    }
 
     DELETED = {
         'text': 'Успешно удалено'
     }
 
     NOT_FOUND = {
-        'text': 'Не найдено'
+        'error': 'Не найдено'
     }
 
 

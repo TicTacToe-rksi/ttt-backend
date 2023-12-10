@@ -1,7 +1,7 @@
 class TicTacToe:
     def __init__(self, _area: list):
         self.area = _area
-        self.size = len(area)
+        self.size = len(_area)
 
     def __str__(self):
         board = ""
@@ -10,19 +10,8 @@ class TicTacToe:
         return board
 
     @classmethod
-    def create(cls, size: int):
-        board = []
-        for _ in range(size):
-            line = []
-            for _ in range(size):
-                line.append(None)
-            board.append(line)
-
-        return board
-
-    @property
-    def finished(self):
-        return not self.winner is None or self.filled
+    def board(cls):
+        return [[None, None, None], [None, None, None], [None, None, None]]
 
     @property
     def winner(self):
@@ -87,18 +76,3 @@ class TicTacToe:
         return self.area
 
 
-# area = TicTacToe.create(3)
-# game = TicTacToe(area)
-# print(game.move(1, 1, 1))
-# print(game.move(0, 2, 2))
-#
-# print(game.move(1, 0, 1))
-# print(game.move(0, 0, 2))
-#
-# print(game.move(1, 2, 1))
-# print(game.move(0, 1, 2))
-#
-# print(game)
-#
-#
-# print(game.finished, game.winner, game.filled)

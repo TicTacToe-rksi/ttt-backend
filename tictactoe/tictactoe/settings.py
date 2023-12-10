@@ -29,6 +29,9 @@ ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
+SERIALIZATION_MODULES = {
+    'game': 'backend.serializers.game_serializer.GameSerializer'
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -53,11 +56,12 @@ MIDDLEWARE = [
 
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'blockchain.middlewares.auth_mw.AuthenticationMiddleware'
+    'backend.middlewares.login.AuthenticationMiddleware'
 ]
 
 CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:8000',
+    'http://localhost:3000',
 ]
 
 ROOT_URLCONF = 'tictactoe.urls'
